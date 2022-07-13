@@ -1,0 +1,23 @@
+.toogle-c {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.toogle-c button {
+  width: 200px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  outline: none;
+  border: none;
+  border-radius: 5px; 
+  background-color: rgb(255, 123, 0); 
+  color: #fff;
+}
+
+.toogle-c h2 {
+  text-align: center;
+}

@@ -1,14 +1,7 @@
-import logo from './logo.svg';
-import './App.css';
+import Toogle from "./components/Toogle";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-       Estudando sobre o Jest
-      </header>
-    </div>
-  );
+  return <Toogle />
 }
 
 export default App;
