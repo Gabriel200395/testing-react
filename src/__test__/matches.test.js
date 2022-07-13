@@ -17,9 +17,26 @@ test("Funcões mock", () => {
   expect(mockSomar).toBe(4);
 });
 
-test("Verdadeiros", () => {});
+test("Boolean", () => {
+  let Booolean = null;
 
-test("Sobre Numeros", () => {
+  //espero que ele seja nulo
+  expect(Booolean).toBeNull();
+
+  //espero que ele não seja undefined
+  expect(Booolean).toBeDefined();
+
+  //espero que ele seja undefined
+  expect(Booolean).not.toBeUndefined();
+
+  //espero que ele seja uma condição if que combina com verdadeiro
+  expect(Booolean).not.toBeTruthy();
+
+  //espero que ele seja uma condição if que combina com falso
+  expect(Booolean).toBeFalsy();
+});
+
+test("Numbers", () => {
   let numeroParams = numero(2);
 
   // verificar se maior que 1
@@ -38,4 +55,21 @@ test("Sobre Numeros", () => {
 
   //ele verificar se verdadeiro e igual
   expect(numeroParams).toEqual(2);
+});
+
+test("String", () => {
+  let nome = "Gabriel";
+  expect(nome).toMatch(/G/);
+});
+
+test("Arrays", () => {
+  const shoppingList = [
+    "fraldas",
+    "kleenex",
+    "sacos de lixo",
+    "papel toalha",
+    "leite",
+  ];
+
+  expect(shoppingList).toContain("leite");
 });
