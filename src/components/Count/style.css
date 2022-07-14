@@ -1,0 +1,36 @@
+.count-c {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.count-c .buttons {
+  display: flex;
+}
+
+.count-c .heading-black {
+  font-size: 50px;
+}
+
+.count-c .heading-red {
+    font-size: 50px;
+    color: red;
+  }
+  
+
+
+.count-c button {
+  width: 200px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  outline: none;
+  border: none;
+  border-radius: 5px;
+  background-color: rgb(255, 123, 0);
+  color: #fff;
+  margin: 0px 15px;
+}
