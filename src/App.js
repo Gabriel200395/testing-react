@@ -1,4 +1,4 @@
-import Toogle from "./components/Count";
+import Toogle from "./components/Users";
 
 function App() {
   return <Toogle />
