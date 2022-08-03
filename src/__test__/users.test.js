@@ -1,10 +1,4 @@
-import {
-  render,
-  screen,
-  waitFor,
-  afterEach,
-  cleanup,
-} from "@testing-library/react";
+import { render, screen, waitFor, fireEvent } from "@testing-library/react";
 import Users from "../components/Users";
 import axios from "axios";
 
@@ -37,7 +31,7 @@ const users = [
 ];
 
 describe("Testando component users", () => {
-  test("Testando dados da requisição", async () => {
+  test("Testando Dados da Requisição do Tipo GET", async () => {
     axios.get.mockImplementation(() => Promise.resolve({ data: users }));
     render(<Users />);
 
@@ -52,5 +46,31 @@ describe("Testando component users", () => {
       "https://jsonplaceholder.typicode.com/users"
     );
     expect(axios.get).toHaveBeenCalledTimes(1);
+  });
+
+  test("Removendo elementos e testando requisição do tipo delete", async () => {
+    axios.get.mockImplementation(() => Promise.resolve({ data: users }));
+    axios.delete.mockImplementation(() => Promise.resolve({ data: users[0] }));
+    render(<Users />);
+
+    await waitFor(() =>
+      expect(
+        screen.getByRole("button", { name: "remover" })
+      ).toBeInTheDocument()
+    );
+
+    fireEvent.click(screen.getByRole("button", { name: "remover" }));
+
+    await waitFor(() =>
+      expect(
+        screen.queryByRole("heading", { name: users[0].name })
+      ).not.toBeInTheDocument()
+    );
+
+    expect(axios.delete).toHaveBeenCalled();
+    expect(axios.delete).toHaveBeenCalledWith(
+      "https://jsonplaceholder.typicode.com/users/1"
+    );
+    expect(axios.delete).toHaveBeenCalledTimes(1);
   });
 });

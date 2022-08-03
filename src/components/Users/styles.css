@@ -1,3 +1,23 @@
 .users-c{
     text-align: center;
+} 
+
+.users-c .flex-row{
+    display: flex;
+    align-items: center; 
+    justify-content: center;
+}
+
+.users-c .flex-row button{
+    width: 100px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    outline: none;
+    border: none;
+    border-radius: 5px;
+    background-color: rgb(255, 123, 0);
+    color: #fff;
+    margin: 0px 15px;
 }

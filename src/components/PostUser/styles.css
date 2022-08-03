@@ -1,0 +1,38 @@
+.c-postuser {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  height: 100vh;
+}
+
+.c-postuser .field-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 10px;
+}
+
+.c-postuser .field-group label {
+  margin-bottom: 10px;
+}
+
+.c-postuser button {
+  width: 300px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  outline: none;
+  border: none;
+  border-radius: 5px;
+  background-color: rgb(255, 123, 0);
+  color: #fff;
+  margin-top: 20px;
+}
+
+.c-postuser .field-group input {
+  height: 40px;
+  outline: none;
+  border-radius: 5px; 
+  border: solid 1px #000;
+}
